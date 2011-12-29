@@ -1,0 +1,62 @@
+html {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: #f8f7f7;
+}
+
+input[type=text], input[type=password], input[type=url], input[type=email], input.text, input.title, textarea {font-size:12px;width:200px;height:20px;background-color:#fff;border:1px solid #bbb;color:#000;}
+input[type=text]:focus, input[type=password]:focus, input[type=url]:focus, input[type=email]:focus, input.text:focus, input.title:focus, textarea:focus {border-color:#666;}
+select {background-color:#fff;border-width:1px;border-style:solid;}
+input[type=text], input[type=password], input[type=url], input[type=email], input.text, input.title, textarea, select {margin:0.5em 0;padding:2px;}
+input.title {font-size:1.5em;}
+input[type=submit] {width:80px;height:24px;margin-top:0.5em;cursor:pointer;}
+
+a {
+	color: #6bb3ca;
+	text-decoration: none;
+}
+
+a:focus, a:hover {
+	color: #459dba;
+}
+
+.container {
+	width: 320px;
+	height: 320px;
+	margin: 40px auto;
+	border-top: 4px solid #ff6217;
+	background: #fff;
+	color: #575858;
+}
+
+ul {
+	margin: 0px;
+	padding: 5px;
+	list-style-type: none;
+}
+
+ul li {
+	margin: 0;
+	padding: 10px;
+	border-bottom: 1px solid #bac0c6;
+}
+
+.content {
+	margin: 5px;
+}
+
+.title {
+	text-align: center;
+	padding: 5px;
+	color: #bac0c6;
+	border-bottom: 1px solid #bdaea7;
+}
+
+.date {
+	text-align: center;
+	font-weight: bold;
+	font-size: 120%;
+	padding-top: 5px;
+	border-top: 2px solid #bdaea7;
+}

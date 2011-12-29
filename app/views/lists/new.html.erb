@@ -1,4 +1,15 @@
-<%= form_for([@calendar, @list]) do |f| %>
-  <%= f.text_field :content %>
-  <%= f.submit "Create" %>
-<% end %>
+<div class="date">
+  <%= @calendar.created_at.to_date %>
+</div>
+<div class="title">
+  <%= @calendar.name %>
+</div>
+<div class="content">
+  <div class="back">
+	<%= link_to '<< back', @calendar %>	
+  </div>
+  <%= form_for([@calendar, @list]) do |f| %>
+    <%= f.text_field :content %>
+    <%= f.submit "Create" %>
+  <% end %>
+</div>

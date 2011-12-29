@@ -9,15 +9,16 @@ class CalendarsController < ApplicationController
   
   def create
     @calendar = Calendar.new(params[:calendar])
-	if @calendar.save
-	  redirect_to @calendar, :flash => { :success => "Done!" }
-	else
-	  render 'new'
+	  if @calendar.save
+	    redirect_to @calendar, :flash => { :success => "Done!" }
+	  else
+	    render 'new'
 	end
   end
   
   def show
     @calendar = Calendar.find(params[:id])
-	@lists = @calendar.lists
+    @next_calendar = @calendar.next
+	  @lists = @calendar.lists
   end
 end

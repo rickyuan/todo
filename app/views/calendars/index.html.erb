@@ -1,5 +1,11 @@
 <% for calendar in @calendars %>
+<div class="date">
+  <%= calendar.created_at.to_date %>
+</div>
+<div class="title">
   <%= calendar.name %>
-  <%= calendar.created_at %>
+</div>
 <% end %>
+<div class="content">
 <%= link_to 'Create', new_calendar_path %>
+</div>

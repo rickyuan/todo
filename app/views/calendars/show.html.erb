@@ -1,7 +1,25 @@
-<%= @calendar.name %>
-<%= @calendar.created_at %>
-<% if @calendar.lists.empty? %>
-<% for list in @lists %>
-  <%= list.content %>
-<% end %>
-<% end %>
+<div class="date">
+  <%= @calendar.created_at.to_date %>
+  <% if @calendar == Calendar.last %>
+  <%= link_to '>', new_calendar_path %>
+  <% else %>
+  <%= link_to '>', new_calendar_path %>
+  <% end %>
+</div>
+<div class="title">
+  <%= @calendar.name %>
+</div>
+<div class="content">
+  <ul>
+	<li>
+      <%= link_to '+ new', new_calendar_list_path(@calendar) %>
+    </li>
+    <% unless @calendar.lists.empty? %>
+    <% for list in @lists %>
+    <li>
+      <%= list.content %>
+    </li>
+    <% end %>
+    <% end %>
+  </ul>
+</div>

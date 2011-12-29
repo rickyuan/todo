@@ -1,4 +1,14 @@
-<%= form_for(@calendar) do |f| %>
-  <%= f.text_field :name %>
-  <%= f.submit "Create" %>
-<% end %>
+<div class="date">
+  <%= Date.today %>
+</div>
+<div class="title">
+</div>
+<div class="content">
+  <div class="back">
+	<%= link_to '<< back', root_path %>	
+  </div>
+  <%= form_for(@calendar) do |f| %>
+	<%= f.text_field :name %>
+	<%= f.submit "Create" %>
+  <% end %>
+</div>
