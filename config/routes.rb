@@ -1,4 +1,9 @@
 Todo::Application.routes.draw do
+
+  root to: 'calendars#index'
+  resources :calendars do
+    resources :lists
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,5 @@
+<h1><%= Date.today %></h1>
+<%= link_to 'Create new', new_list_path %>
+<% for list in @lists %>
+  <%= list.content %>
+<% end %>

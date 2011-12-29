@@ -1,0 +1,7 @@
+<%= @calendar.name %>
+<%= @calendar.created_at %>
+<% if @calendar.lists.empty? %>
+<% for list in @lists %>
+  <%= list.content %>
+<% end %>
+<% end %>

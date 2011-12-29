@@ -1,0 +1,5 @@
+<% for calendar in @calendars %>
+  <%= calendar.name %>
+  <%= calendar.created_at %>
+<% end %>
+<%= link_to 'Create', new_calendar_path %>
