@@ -1,9 +1,14 @@
 <div class="date">
+  <% unless @calendar == Calendar.first %>
+  <%= link_to '<', @calendar.previous %>
+  <% end %>
   <%= @calendar.created_at.to_date %>
-  <% if @calendar == Calendar.last %>
+  <% if @calendar.last.created_at.to_date < Date.today %>
   <%= link_to '>', new_calendar_path %>
   <% else %>
-  <%= link_to '>', new_calendar_path %>
+  <% unless @calendar.next.nil? %>
+  <%= link_to '>', @calendar.next %>
+  <% end %>
   <% end %>
 </div>
 <div class="title">

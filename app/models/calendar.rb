@@ -1,20 +1,17 @@
 class Calendar < ActiveRecord::Base
   has_many :lists
+  belongs_to :user
   
-  def previous(query)
-    unless query.nil?
-      index = query.find_index(self.id)
-      prev_id = query[index-1] unless index.zero?
-      self.class.find_by_id(prev_id)
-    end
-  end
+def previous
+  self.class.first(:conditions => ["created_at < ?", created_at], :order => "created_at desc")
+end
 
-  def next(query)
-    unless query.nil?
-      index = query.find_index(self.id)
-      next_id = query[index+1] unless index == query.size
-      self.class.find_by_id(next_id)
-    end
-  end
-  
+def next
+  self.class.first(:conditions => ["created_at > ?", created_at], :order => "created_at asc")
+end
+
+def last
+  self.class.last
+end
+
 end

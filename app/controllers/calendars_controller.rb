@@ -4,11 +4,11 @@ class CalendarsController < ApplicationController
   end
   
   def new
-    @calendar = Calendar.new
+    @calendar = current_user.calendars.new
   end
   
   def create
-    @calendar = Calendar.new(params[:calendar])
+    @calendar = current_user.calendars.build(params[:calendar])
 	  if @calendar.save
 	    redirect_to @calendar, :flash => { :success => "Done!" }
 	  else
@@ -18,7 +18,6 @@ class CalendarsController < ApplicationController
   
   def show
     @calendar = Calendar.find(params[:id])
-    @next_calendar = @calendar.next
 	  @lists = @calendar.lists
   end
 end

@@ -1,9 +1,10 @@
 Todo::Application.routes.draw do
 
-  root to: 'calendars#index'
+  root to: 'users#new'
   resources :calendars do
     resources :lists
   end
+  resources :users, :only => [ :new, :create ]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

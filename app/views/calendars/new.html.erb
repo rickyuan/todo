@@ -1,12 +1,14 @@
 <div class="date">
+  <%= link_to '<', @calendar.last %>
+  <% if Date.today == @calendar.last.created_at.to_date %>
+  <%= Date.tomorrow %>
+  <% else %>
   <%= Date.today %>
+  <% end %>
 </div>
 <div class="title">
 </div>
 <div class="content">
-  <div class="back">
-	<%= link_to '<< back', root_path %>	
-  </div>
   <%= form_for(@calendar) do |f| %>
 	<%= f.text_field :name %>
 	<%= f.submit "Create" %>

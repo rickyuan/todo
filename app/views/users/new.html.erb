@@ -1,0 +1,11 @@
+<div class="date">
+<%= Date.today %>
+</div>
+<div class="content">
+<p>每天记录必须要做的事情，简单几条，过期不后！</p>
+<p>创建一个用户吧</p>
+<%= form_for(@user) do |f| %>
+  <%= f.text_field :name %>
+  <%= f.submit "创建" %>
+<% end %>
+</div>
